@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Assign Aries RFC Number</title>
+    <script>
+function parseResponse() {
+    alert(this.responseText);
+}
+
+function getNum() {
+    var request = new XMLHttpRequest();
+    request.onload = parseResponse;
+    request.open('get', 'https://api.github.com/repos/hyperledger/aries-rfcs/pulls');
+    request.send()
+}
+    </script>
+</head>
+<body>
+<h1>Assign Aries RFC Number</h1>
+<p>This webpage will help you figure out what RFC number you should pick
+for your <a target="_blank" href="https://github.com/hyperledger/aries-rfcs">
+        Hyperledger Aries RFC</a>. It does this by running an AJAX command
+against github's API to figure out the highest PR number, open or closed,
+that's been raised against that repo already, and incrementing by 1.</p>
+<p>You get your RFC number right before you're ready to submit a PR; if
+you do it long before, there's a chance that someone else will use your
+number before you do.</p>
+<input type="button" onclick="getNum()" value="Get an RFC number now"/>
+</body>
+</html>
