@@ -22,7 +22,7 @@ function parseResponse() {
     idx += 7;
     endOfNum = txt.indexOf('"', idx);
     nextNum = parseInt(txt.substring(idx, endOfNum)) + 1;
-    document.getElementById("num").innerText = nextNum.toString();
+    document.getElementById("num").innerText = nextNum.toString().padStart(4, '0');
 }
 
 function getNum() {
