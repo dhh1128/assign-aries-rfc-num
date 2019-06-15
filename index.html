@@ -2,15 +2,22 @@
 <head>
     <title>Assign Aries RFC Number</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+body {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+    </style>
     <script>
 function parseResponse() {
     alert(this.responseText);
+    var responseObj = JSON.parse(this.responseText)
 }
 
 function getNum() {
     var request = new XMLHttpRequest();
     request.onload = parseResponse;
-    request.open('get', 'https://api.github.com/repos/hyperledger/aries-rfcs/pulls');
+    request.open('get', 'https://api.github.com/repos/hyperledger/aries-rfcs/pulls&state=all');
     request.send()
 }
     </script>
