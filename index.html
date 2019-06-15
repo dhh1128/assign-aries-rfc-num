@@ -10,6 +10,9 @@ body {
 #num {
     font-size: 60px;
     color: red;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    text-align: center;
 }
     </style>
     <script>
@@ -29,6 +32,8 @@ function getNum() {
     request.open('get', 'https://api.github.com/repos/hyperledger/aries-rfcs/pulls?state=all&per_page=1');
     request.send()
 }
+
+document.addEventListener('DOMContentLoaded', getNum);
     </script>
 </head>
 <body>
@@ -36,10 +41,11 @@ function getNum() {
 <p>The next number you can use for <a target="_blank"
 href="https://github.com/hyperledger/aries-rfcs/blob/master/README.md">Hyperledger
 Aries RFC</a> is:</p>
-<p id="num" onload="getNum()"></p>
+<p id="num">...</p>
 <p>Don't put this number into the README.md or folder name for your RFC
 until just before you're ready to submit a PR. If there's a lag between
 when you grab this number and when you submit the PR, there's a chance
 that someone else will use your number before you do.</p>
+<input type="button" onclick="getNum()" value="Refresh"/>
 </body>
 </html>
