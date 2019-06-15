@@ -14,9 +14,8 @@ function parseResponse() {
     var idx = txt.search("/pulls/");
     idx += 7;
     endOfNum = txt.indexOf('"', idx);
-    lastNum = parseInt(txt.substring(idx, endOfNum));
-    lastNum += 1;
-    document.getElementById("num").innerHtml = lastNum.toString();
+    nextNum = parseInt(txt.substring(idx, endOfNum)) + 1;
+    document.getElementById("num").innerHtml = nextNum.toString();
 }
 
 function getNum() {
