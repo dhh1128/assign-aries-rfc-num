@@ -16,7 +16,7 @@ function parseResponse() {
     endOfNum = txt.indexOf('"', idx);
     nextNum = parseInt(txt.substring(idx, endOfNum)) + 1;
     alert(nextNum);
-    document.getElementById("num").innerHtml = nextNum.toString();
+    document.getElementById("num").innerText = nextNum.toString();
 }
 
 function getNum() {
