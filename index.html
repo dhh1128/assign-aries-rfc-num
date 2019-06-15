@@ -22,7 +22,7 @@ function parseResponse() {
 function getNum() {
     var request = new XMLHttpRequest();
     request.onload = parseResponse;
-    request.open('get', 'https://api.github.com/repos/hyperledger/aries-rfcs/pulls?state=all');
+    request.open('get', 'https://api.github.com/repos/hyperledger/aries-rfcs/pulls?state=all&per_page=1');
     request.send()
 }
     </script>
@@ -38,9 +38,9 @@ that's been raised against that repo already, and incrementing by 1.</p>
 you do it long before, there's a chance that someone else will use your
 number before you do.</p>
 <h1>Next RFC Number</h1>
-<div id="num">
+<p id="num">
 
-</div>
+</p>
 <input type="button" onclick="getNum()" value="Get an RFC number now"/>
 </body>
 </html>
